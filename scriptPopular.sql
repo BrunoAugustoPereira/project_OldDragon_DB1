@@ -148,5 +148,37 @@ INSERT INTO public.raca(
 INSERT INTO public.raca(
 	id, nome, tamanho_usual, idade_maturidade, expectativa_de_vida, movimentacao_base, id_idioma)
 	VALUES (4, 'Halfling', 80, 30, 70, 6, 1);
+
+	
+-- populate the arma table	
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (1, 'adaga', 'PE', 'P', 'arremesso 3/6', 200, '1d4', 500, 2);
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (2, 'cimitara', 'CO', 'M',null, 1500,'1d6', 1500, 2);
+
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (3, 'arco curto',null,'P', '15/30', 2500, null, 500, null);
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (4, 'flecha', 'PE','P',null, 700, '1d8', 1500, null);
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (5,'martelo de batalha', 'IM','G',null,1500, '2d4', 10000, 2);
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (6, 'cajado', 'IM','M', null, 50000, '1d6', 1500, 2);
+	
+INSERT INTO public.arma(
+	id, nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico)
+	VALUES (7, 'maca', 'IM','M', null, 600, '1d8', 500, 2);
+
 	
 	
