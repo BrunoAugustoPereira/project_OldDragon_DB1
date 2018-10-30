@@ -34,7 +34,25 @@ TABLESPACE pg_default;
 
 ALTER TABLE public.mestre
     OWNER to postgres;
+	
+-- Table: public.classe
 
+-- DROP TABLE public.classe;
+
+CREATE TABLE public.classe
+(
+    id integer NOT NULL,
+    nome character varying COLLATE pg_catalog."default" NOT NULL,
+    dado_de_vida character varying COLLATE pg_catalog."default" NOT NULL,
+    CONSTRAINT classe_pkey PRIMARY KEY (id)
+)
+WITH (
+    OIDS = FALSE
+)
+TABLESPACE pg_default;
+
+ALTER TABLE public.classe
+    OWNER to postgres;
 
 -- Table: public.idioma
 
@@ -91,8 +109,8 @@ CREATE TABLE public.arma
 (
     id integer NOT NULL,
     nome character varying COLLATE pg_catalog."default" NOT NULL,
-    tipo_de_dano character(2)[] COLLATE pg_catalog."default",
-    tamanho character(2)[] COLLATE pg_catalog."default",
+    tipo_de_dano character varying COLLATE pg_catalog."default",
+    tamanho character varying COLLATE pg_catalog."default",
     alcance character varying COLLATE pg_catalog."default",
     preco integer,
     dano character varying COLLATE pg_catalog."default",
