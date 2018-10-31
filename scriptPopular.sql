@@ -181,4 +181,15 @@ INSERT INTO public.arma(
 	VALUES (7, 'maca', 'IM','M', null, 600, '1d8', 500, 2);
 
 	
+--populate the personagem table
+
+-- Mago halfling 
+INSERT INTO public.personagem(
+	id, nome, nivel, alinhamento, idade, tamanho, forca, destreza, constituicao, sabedoria, carisma, inteligencia, raca, classe, jogador, mestre)
+	VALUES (1, 'Altom DownHill', '3', 'Neutro', 35, 75, 9, 12, 13, 10, 11, 14, 4, 4, 1, 1);
+
+-- elfo ladrao
+INSERT INTO public.personagem(
+	id, nome, nivel, alinhamento, idade, tamanho, forca, destreza, constituicao, sabedoria, carisma, inteligencia, raca, classe, jogador, mestre)
+	VALUES (2, 'Lhoris greenleaf','2', 'Caotico', 180, 157, 13, 14, 13, 11, 11, 8, 3, 3, 2, 1);
 	
