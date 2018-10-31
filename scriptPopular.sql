@@ -187,9 +187,56 @@ INSERT INTO public.arma(
 INSERT INTO public.personagem(
 	id, nome, nivel, alinhamento, idade, tamanho, forca, destreza, constituicao, sabedoria, carisma, inteligencia, raca, classe, jogador, mestre)
 	VALUES (1, 'Altom DownHill', '3', 'Neutro', 35, 75, 9, 12, 13, 10, 11, 14, 4, 4, 1, 1);
+	
+	--languages spoke by Altom
+	INSERT INTO public.idioma_personagem(
+		id_personagem, id_idioma)
+	VALUES (1, 8);
 
+	INSERT INTO public.idioma_personagem(
+		id_personagem, id_idioma)
+		VALUES (1, 9);
+		
+	-- weapons Alton
+	
+	INSERT INTO public.arsenal_personagem(
+	id_personagem, arma)
+	VALUES (1, 6);
+
+	INSERT INTO public.arsenal_personagem(
+	id_personagem, arma)
+	VALUES (1, 1);
+	
 -- elfo ladrao
 INSERT INTO public.personagem(
 	id, nome, nivel, alinhamento, idade, tamanho, forca, destreza, constituicao, sabedoria, carisma, inteligencia, raca, classe, jogador, mestre)
-	VALUES (2, 'Lhoris greenleaf','2', 'Caotico', 180, 157, 13, 14, 13, 11, 11, 8, 3, 3, 2, 1);
+	VALUES (2, 'Lhoris Greenleaf','2', 'Caotico', 180, 157, 13, 14, 13, 11, 11, 8, 3, 3, 2, 1);
 	
+
+	--languages spoke by Lhoris
+	INSERT INTO public.idioma_personagem(
+		id_personagem, id_idioma)
+		VALUES (2, 4);
+	
+	INSERT INTO public.idioma_personagem(
+		id_personagem, id_idioma)
+		VALUES (2, 1);
+		
+		
+		
+	-- weapons Lhoris	
+	INSERT INTO public.arsenal_personagem(
+		id_personagem, arma)
+		VALUES (2, 1);
+
+	INSERT INTO public.arsenal_personagem(
+		id_personagem, arma)
+		VALUES (2, 3);
+		
+	INSERT INTO public.arsenal_personagem(
+		id_personagem, arma)
+		VALUES (2, 4);
+		
+	INSERT INTO public.arsenal_personagem(
+		id_personagem, arma)
+		VALUES (2, 2);
