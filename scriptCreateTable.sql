@@ -1,10 +1,45 @@
+CREATE SEQUENCE public.jogador_id_seq;
+
+ALTER SEQUENCE public.jogador_id_seq
+    OWNER TO postgres;
+    
+CREATE SEQUENCE public.mestre_id_seq;
+
+ALTER SEQUENCE public.mestre_id_seq
+    OWNER TO postgres;
+    
+CREATE SEQUENCE public.classe_id_seq;
+
+ALTER SEQUENCE public.classe_id_seq
+    OWNER TO postgres;
+	
+CREATE SEQUENCE public.idioma_id_seq;
+
+ALTER SEQUENCE public.idioma_id_seq
+    OWNER TO postgres;
+	
+CREATE SEQUENCE public.raca_id_seq;
+
+ALTER SEQUENCE public.raca_id_seq
+    OWNER TO postgres;
+	
+CREATE SEQUENCE public.arma_id_seq;
+
+ALTER SEQUENCE public.arma_id_seq
+    OWNER TO postgres;
+	
+CREATE SEQUENCE public.personagem_id_seq;
+
+ALTER SEQUENCE public.personagem_id_seq
+    OWNER TO postgres;
+
 -- Table: public.jogador
 
 -- DROP TABLE public.jogador;
 
 CREATE TABLE public.jogador
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('jogador_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT "Jogador_pkey" PRIMARY KEY (id)
 )
@@ -23,7 +58,7 @@ ALTER TABLE public.jogador
 
 CREATE TABLE public.mestre
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('mestre_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT mestre_pkey PRIMARY KEY (id)
 )
@@ -41,7 +76,7 @@ ALTER TABLE public.mestre
 
 CREATE TABLE public.classe
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('classe_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     dado_de_vida character varying COLLATE pg_catalog."default" NOT NULL,
     CONSTRAINT classe_pkey PRIMARY KEY (id)
@@ -60,7 +95,7 @@ ALTER TABLE public.classe
 
 CREATE TABLE public.idioma
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('idioma_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default",
     CONSTRAINT idioma_pkey PRIMARY KEY (id)
 )
@@ -79,7 +114,7 @@ ALTER TABLE public.idioma
 
 CREATE TABLE public.raca
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('raca_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     tamanho_usual integer,
     idade_maturidade integer,
@@ -107,7 +142,7 @@ ALTER TABLE public.raca
 
 CREATE TABLE public.arma
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('arma_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     tipo_de_dano character varying COLLATE pg_catalog."default",
     tamanho character varying COLLATE pg_catalog."default",
@@ -133,7 +168,7 @@ ALTER TABLE public.arma
 
 CREATE TABLE public.personagem
 (
-    id integer NOT NULL,
+    id integer NOT NULL DEFAULT nextval('personagem_id_seq'::regclass),
     nome character varying COLLATE pg_catalog."default" NOT NULL,
     nivel integer NOT NULL,
     alinhamento character varying COLLATE pg_catalog."default",
