@@ -22,7 +22,7 @@ public class ArmaDAO {
     public static String SENHA= "password";
     Connection c = null;
     
-    public void insertNewWeapon(String nome, String tipoDeDano, String tamanho, String alcance, int preco , String dano, int peso, String chanceDeCritico ) throws SQLException{
+    public void insertNewWeapon(String nome, String tipoDeDano, String tamanho, String alcance, int preco , String dano, int peso, int chanceDeCritico ) throws SQLException{
         try {
             Class.forName("org.postgresql.Driver");
             c = DriverManager.getConnection(URL, USUARIO, SENHA); String sql = "INSERT INTO public.arma(nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
@@ -34,7 +34,7 @@ public class ArmaDAO {
             stmt.setInt(5,preco);
             stmt.setString(6,dano);
             stmt.setInt(7,peso);
-            stmt.setString(8,chanceDeCritico);
+            stmt.setInt(8,chanceDeCritico);
 
             int resultado = stmt.executeUpdate();
             if (resultado == 1) {
