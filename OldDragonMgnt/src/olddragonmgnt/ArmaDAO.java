@@ -5,6 +5,8 @@
  */
 package olddragonmgnt;
 
+import java.sql.Connection;
+
 
 
 /**

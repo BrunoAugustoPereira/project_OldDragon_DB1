@@ -17,7 +17,7 @@ public class OldDragonMgnt {
         // TODO code application logic here
         
         ArmaDAO arma= new ArmaDAO();
-        arma.test();
+      
     }
     
 }
