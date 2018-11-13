@@ -5,6 +5,8 @@
  */
 package olddragonmgnt;
 
+import java.sql.SQLException;
+
 /**
  *
  * @author aluno
@@ -13,11 +15,11 @@ public class OldDragonMgnt {
     /**
      * @param args the command line arguments
      */
-    public static void main(String[] args) {
+    public static void main(String[] args) throws SQLException {
         // TODO code application logic here
         
         ArmaDAO arma= new ArmaDAO();
-      
+        //arma.insertNewWeapon("teste", "TE", "G", "15/30", 500, "1d4", 500, 2);
     }
     
 }
