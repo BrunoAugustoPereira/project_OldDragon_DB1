@@ -4,22 +4,23 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
+
 
 
 public class DAO {
 
-    public static final String JDBC_URL = "jdbc:postgresql://localhost:5432/cadastro";
-    public static final String JDBC_USUARIO = "postgres";
-    public static final String JDBC_SENHA = "ufc123";
+    public static final String URL = "jdbc:postgresql://localhost:5432/OD";
+    public static final String USUARIO = "postgres";
+    public static final String SENHA = "password";
 
     protected Connection obterConexao() throws Exception {
         Connection c = null;
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(JDBC_URL, JDBC_USUARIO, JDBC_SENHA);
-        } catch (ClassNotFoundException ex) {
-            throw new Exception(ex);
-        } catch (SQLException ex) {
+            c = DriverManager.getConnection(URL, USUARIO, SENHA);
+        } catch (ClassNotFoundException | SQLException ex) {
             throw new Exception(ex);
         }
         return c;
@@ -34,4 +35,11 @@ public class DAO {
             throw new Exception(ex);
         }
     }
+    
+    public static void main(String[] args){
+        DAO d = new DAO();
+        
+    }
+      
+    
 }

@@ -25,7 +25,8 @@ public class ArmaDAO {
     public void insertNewWeapon(String nome, String tipoDeDano, String tamanho, String alcance, int preco , String dano, int peso, int chanceDeCritico ) throws SQLException{
         try {
             Class.forName("org.postgresql.Driver");
-            c = DriverManager.getConnection(URL, USUARIO, SENHA); String sql = "INSERT INTO public.arma(nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
+            c = DriverManager.getConnection(URL, USUARIO, SENHA); 
+            String sql = "INSERT INTO public.arma(nome, tipo_de_dano, tamanho, alcance, preco, dano, peso, chance_de_critico) VALUES (?, ?, ?, ?, ?, ?, ?, ?);";
             PreparedStatement stmt = c.prepareStatement(sql);
             stmt.setString(1,nome);
             stmt.setString(2,tipoDeDano);

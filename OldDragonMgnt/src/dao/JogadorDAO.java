@@ -8,7 +8,10 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -25,9 +28,25 @@ public class JogadorDAO extends DAO{
         fecharConexao(c);
         if (resultado != 1) {
             throw new Exception("Não foi possível inserir esta pessoa");
+        }      
+    }
+    
+    public List<Jogador> obterTodos() throws Exception {
+        List<Jogador> Jogadores = new ArrayList<Jogador>();
+        Connection c = obterConexao();
+        String sql = "SELECT id, nome FROM jogador";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Jogador p = new Jogador();
+            p.setId(rs.getInt("id"));
+            p.setNome(rs.getString("nome"));
+            Jogadores.add(p);
         }
-            
-           
+        rs.close();
+        stmt.close();
+        fecharConexao(c);
+        return Jogadores;
     }
 
    
