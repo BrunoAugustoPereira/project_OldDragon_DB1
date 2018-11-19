@@ -50,19 +50,29 @@
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="0" attributes="0">
                           <Group type="102" attributes="0">
-                              <Component id="botaoAtualizarMestre" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botaoRemoverMestre" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Component id="botaoInserirArma" min="-2" pref="170" max="-2" attributes="0"/>
+                              <EmptySpace pref="9" max="32767" attributes="0"/>
+                              <Component id="botaoInserirPersonagem" min="-2" pref="170" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" attributes="0">
-                              <Component id="botaoAtualizarJogadores" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="botaoRemoverJogadores" min="-2" pref="170" max="-2" attributes="0"/>
+                              <Group type="103" groupAlignment="0" attributes="0">
+                                  <Group type="102" attributes="0">
+                                      <Component id="botaoAtualizarMestre" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="botaoRemoverMestre" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                                  <Group type="102" attributes="0">
+                                      <Component id="botaoAtualizarJogadores" min="-2" pref="170" max="-2" attributes="0"/>
+                                      <EmptySpace max="-2" attributes="0"/>
+                                      <Component id="botaoRemoverJogadores" min="-2" pref="170" max="-2" attributes="0"/>
+                                  </Group>
+                              </Group>
+                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
                           </Group>
                       </Group>
                   </Group>
               </Group>
-              <EmptySpace pref="14" max="32767" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -86,7 +96,11 @@
                   <Component id="botaoRemoverMestre" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="-2" attributes="0"/>
-              <Component id="botaoInserirClasse" min="-2" pref="60" max="-2" attributes="0"/>
+              <Group type="103" groupAlignment="3" attributes="0">
+                  <Component id="botaoInserirClasse" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoInserirArma" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoInserirPersonagem" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+              </Group>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="botaoInserirIdioma" min="-2" pref="60" max="-2" attributes="0"/>
               <EmptySpace pref="29" max="32767" attributes="0"/>
@@ -186,6 +200,22 @@
       </Properties>
       <Events>
         <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirIdiomaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoInserirArma">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Inserir Arma"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirArmaActionPerformed"/>
+      </Events>
+    </Component>
+    <Component class="javax.swing.JButton" name="botaoInserirPersonagem">
+      <Properties>
+        <Property name="text" type="java.lang.String" value="Inserir Personagem"/>
+      </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirPersonagemActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

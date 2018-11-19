@@ -39,6 +39,8 @@ public class TelaPrincipal extends javax.swing.JFrame {
         botaoRemoverMestre = new javax.swing.JButton();
         botaoInserirClasse = new javax.swing.JButton();
         botaoInserirIdioma = new javax.swing.JButton();
+        botaoInserirArma = new javax.swing.JButton();
+        botaoInserirPersonagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("Gerenciador Old Dragon");
@@ -117,6 +119,20 @@ public class TelaPrincipal extends javax.swing.JFrame {
             }
         });
 
+        botaoInserirArma.setText("Inserir Arma");
+        botaoInserirArma.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoInserirArmaActionPerformed(evt);
+            }
+        });
+
+        botaoInserirPersonagem.setText("Inserir Personagem");
+        botaoInserirPersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoInserirPersonagemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -141,14 +157,21 @@ public class TelaPrincipal extends javax.swing.JFrame {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoAtualizarMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botaoRemoverMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(botaoInserirArma, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 9, Short.MAX_VALUE)
+                                .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(layout.createSequentialGroup()
-                                .addComponent(botaoAtualizarJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                                .addComponent(botaoRemoverJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))))
-                .addContainerGap(14, Short.MAX_VALUE))
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoAtualizarMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botaoRemoverMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                    .addGroup(layout.createSequentialGroup()
+                                        .addComponent(botaoAtualizarJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                        .addComponent(botaoRemoverJogadores, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                                .addGap(0, 0, Short.MAX_VALUE)))))
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -168,7 +191,10 @@ public class TelaPrincipal extends javax.swing.JFrame {
                     .addComponent(botaoConsultarMestres, javax.swing.GroupLayout.PREFERRED_SIZE, 57, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(botaoRemoverMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(botaoInserirClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoInserirClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoInserirArma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(botaoInserirIdioma, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(29, Short.MAX_VALUE))
@@ -298,6 +324,31 @@ public class TelaPrincipal extends javax.swing.JFrame {
         dialog.setVisible(true);
     }//GEN-LAST:event_botaoInserirIdiomaActionPerformed
 
+    private void botaoInserirArmaActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoInserirArmaActionPerformed
+        TelaInserirArma dialog = new TelaInserirArma(this, true);
+        dialog.setLocationRelativeTo(null);
+        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                dialog.dispose();
+            }
+        });
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botaoInserirArmaActionPerformed
+
+    private void botaoInserirPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoInserirPersonagemActionPerformed
+        TelaInserirPersonagem dialog = new TelaInserirPersonagem(this, true);
+        dialog.setLocationRelativeTo(null);
+        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                dialog.dispose();
+            }
+        });
+        dialog.setVisible(true);
+    
+    }//GEN-LAST:event_botaoInserirPersonagemActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -336,10 +387,12 @@ public class TelaPrincipal extends javax.swing.JFrame {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoAtualizarJogadores;
     private javax.swing.JButton botaoAtualizarMestre;
+    private javax.swing.JButton botaoInserirArma;
     private javax.swing.JButton botaoInserirClasse;
     private javax.swing.JButton botaoInserirIdioma;
     private javax.swing.JButton botaoInserirJogadores;
     private javax.swing.JButton botaoInserirMestre;
+    private javax.swing.JButton botaoInserirPersonagem;
     private javax.swing.JButton botaoRemoverJogadores;
     private javax.swing.JButton botaoRemoverMestre;
     private javax.swing.JLabel rotuloAcoes;
