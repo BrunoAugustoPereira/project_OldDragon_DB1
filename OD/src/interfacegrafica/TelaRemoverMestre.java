@@ -5,8 +5,8 @@
  */
 package interfacegrafica;
 
-import dao.Jogador;
-import dao.JogadorDAO;
+import dao.Mestre;
+import dao.MestreDAO;
 import java.util.List;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -45,7 +45,7 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
         idJogadores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Remover Pessoa");
+        setTitle("Remover Mestre");
         setName("dialogRemoverPessoa"); // NOI18N
 
         rotuloCodigo.setText("Código:");
@@ -119,13 +119,13 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoRemoverActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRemoverActionPerformed
-        int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente remover este Jogador?", "Remover Jogador", JOptionPane.YES_NO_CANCEL_OPTION);
+        int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente remover este Mestre?", "Remover Mestre", JOptionPane.YES_NO_CANCEL_OPTION);
         if (opcao == JOptionPane.YES_OPTION) {
             try {
-                Jogador p = new Jogador();
+                Mestre p = new Mestre();
                 p.setId(Integer.parseInt(textoCodigo.getText()));
                 p.setNome(textoNome.getText());
-                JogadorDAO dao = new JogadorDAO();
+                MestreDAO dao = new MestreDAO();
                 dao.remover(p);
                 textoCodigo.setEnabled(true);
                 idJogadores.setEnabled(true);
@@ -134,9 +134,9 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
                 textoCodigo.setText("");
                 textoNome.setText("");
                 ChangeOptions();
-                JOptionPane.showMessageDialog(this, "Jogador removida com sucesso", "Remover Jogador", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Mestre removido com sucesso", "Remover Mestre", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Remover Jogador", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Remover Mestre", JOptionPane.ERROR_MESSAGE);
             }
         }
         botaoRemover.transferFocus();
@@ -144,10 +144,10 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
     private void ChangeOptions(){
         try {
             idJogadores.removeAllItems();
-            JogadorDAO jDAO = new JogadorDAO();
-            List<Jogador> Jogadores = jDAO.obterTodos();
-            for(int i = 0;Jogadores.size()>i;i++){
-                idJogadores.addItem(Jogadores.get(i).getNome());
+            MestreDAO jDAO = new MestreDAO();
+            List<Mestre> Mestres = jDAO.obterTodos();
+            for(int i = 0;Mestres.size()>i;i++){
+                idJogadores.addItem(Mestres.get(i).getNome());
             }
 
             
@@ -157,8 +157,8 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
     }
     private void botaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultarActionPerformed
         try {
-            JogadorDAO dao = new JogadorDAO();
-            Jogador p = dao.obterPorNome(idJogadores.getSelectedItem().toString()).get(0);
+            MestreDAO dao = new MestreDAO();
+            Mestre p = dao.obterPorNome(idJogadores.getSelectedItem().toString()).get(0);
             textoNome.setText(p.getNome());
             textoCodigo.setText(Integer.toString(p.getId()));
             idJogadores.setEnabled(false);
@@ -166,7 +166,7 @@ public class TelaRemoverMestre extends javax.swing.JDialog {
             botaoConsultar.setEnabled(false);
             botaoRemover.setEnabled(true);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Consultar Jogador", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Consultar Mestre", JOptionPane.ERROR_MESSAGE);
         }
         botaoConsultar.transferFocus();
     }//GEN-LAST:event_botaoConsultarActionPerformed

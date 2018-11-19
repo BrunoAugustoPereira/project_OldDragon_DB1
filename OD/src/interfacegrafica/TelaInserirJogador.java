@@ -37,7 +37,7 @@ public class TelaInserirJogador extends javax.swing.JDialog {
         botaoInserir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Inserir Pessoa");
+        setTitle("Inserir Jogador");
         setName("dialogInserirPessoa"); // NOI18N
 
         rotuloNome.setText("Nome:");

@@ -45,7 +45,7 @@ public class TelaRemoverJogador extends javax.swing.JDialog {
         idJogadores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Remover Pessoa");
+        setTitle("Remover Jogador");
         setName("dialogRemoverPessoa"); // NOI18N
 
         rotuloCodigo.setText("Código:");

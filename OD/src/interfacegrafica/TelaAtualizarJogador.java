@@ -46,7 +46,7 @@ public class TelaAtualizarJogador extends javax.swing.JDialog {
         idJogadores = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Atualizar Pessoa");
+        setTitle("Atualizar Jogador");
         setName("dialogAtualizarPessoa"); // NOI18N
 
         rotuloCodigo.setText("Código:");

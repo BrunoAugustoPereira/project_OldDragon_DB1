@@ -5,8 +5,8 @@
  */
 package interfacegrafica;
 
-import dao.Jogador;
-import dao.JogadorDAO;
+import dao.Mestre;
+import dao.MestreDAO;
 import java.util.List;
 import javax.swing.DefaultListModel;
 import javax.swing.JOptionPane;
@@ -42,7 +42,7 @@ public class TelaConsultarMestre extends javax.swing.JDialog {
         listaPessoas = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consultar Pessoa");
+        setTitle("Consultar Mestre");
         setName("dialogConsultarPessoa"); // NOI18N
 
         rotuloNome.setText("Nome:");
@@ -94,16 +94,16 @@ public class TelaConsultarMestre extends javax.swing.JDialog {
 
     private void botaoConsultarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoConsultarActionPerformed
         try {
-            JogadorDAO dao = new JogadorDAO();
-            List<Jogador> Jogadores = dao.obterPorNome(textoNome.getText());
+            MestreDAO dao = new MestreDAO();
+            List<Mestre> Mestres = dao.obterPorNome(textoNome.getText());
             DefaultListModel<String> listModel = (DefaultListModel<String>) listaPessoas.getModel();
             listModel.clear();
-            for (Jogador p : Jogadores) {
+            for (Mestre p : Mestres) {
                 listModel.addElement(p.getId() + " - " + p.getNome());
             }
-            JOptionPane.showMessageDialog(this, Jogadores.size() + " registro(s) encontrado(s)", "Consultar Jogador", JOptionPane.INFORMATION_MESSAGE);
+            JOptionPane.showMessageDialog(this, Mestres.size() + " registro(s) encontrado(s)", "Consultar Mestre", JOptionPane.INFORMATION_MESSAGE);
         } catch (Exception ex) {
-            JOptionPane.showMessageDialog(this, ex.getMessage(), "Consultar Pessoa", JOptionPane.ERROR_MESSAGE);
+            JOptionPane.showMessageDialog(this, ex.getMessage(), "Consultar Mestre", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botaoConsultarActionPerformed
 

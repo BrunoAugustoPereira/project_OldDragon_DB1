@@ -5,8 +5,8 @@
  */
 package interfacegrafica;
 
-import dao.Jogador;
-import dao.JogadorDAO;
+import dao.Mestre;
+import dao.MestreDAO;
 import javax.swing.JOptionPane;
 
 /**
@@ -37,7 +37,7 @@ public class TelaInserirMestre extends javax.swing.JDialog {
         botaoInserir = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Inserir Pessoa");
+        setTitle("Inserir Mestre");
         setName("dialogInserirPessoa"); // NOI18N
 
         rotuloNome.setText("Nome:");
@@ -79,17 +79,17 @@ public class TelaInserirMestre extends javax.swing.JDialog {
     }// </editor-fold>//GEN-END:initComponents
 
     private void botaoInserirActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoInserirActionPerformed
-        int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente inserir este Jogador?", "Inserir Jogador", JOptionPane.YES_NO_CANCEL_OPTION);
+        int opcao = JOptionPane.showConfirmDialog(this, "Deseja realmente inserir este Mestre?", "Inserir Mestre", JOptionPane.YES_NO_CANCEL_OPTION);
         if (opcao == JOptionPane.YES_OPTION) {
             try {
-                Jogador p = new Jogador();
+                Mestre p = new Mestre();
                 p.setNome(textoNome.getText());
-                JogadorDAO dao = new JogadorDAO();
+                MestreDAO dao = new MestreDAO();
                 dao.inserir(p);
                 textoNome.setText("");
-                JOptionPane.showMessageDialog(this, "Jogador inserido com sucesso", "Inserir Jogaodr", JOptionPane.INFORMATION_MESSAGE);
+                JOptionPane.showMessageDialog(this, "Mestre inserido com sucesso", "Inserir Mestre", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(this, ex.getMessage(), "Inserir Jogador", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(this, ex.getMessage(), "Inserir Mestre", JOptionPane.ERROR_MESSAGE);
             }
         }
         botaoInserir.transferFocus();

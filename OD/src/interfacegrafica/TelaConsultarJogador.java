@@ -42,7 +42,7 @@ public class TelaConsultarJogador extends javax.swing.JDialog {
         listaPessoas = new javax.swing.JList<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
-        setTitle("Consultar Pessoa");
+        setTitle("Consultar Jogador");
         setName("dialogConsultarPessoa"); // NOI18N
 
         rotuloNome.setText("Nome:");
