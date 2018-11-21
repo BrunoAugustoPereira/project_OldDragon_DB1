@@ -35,7 +35,7 @@ public class ArmaDAO extends DAO {
         stmt.close();
         fecharConexao(c);
         if (resultado != 1) {
-            throw new Exception("Não foi possível inserir esta pessoa");
+            throw new Exception("Não foi possível inserir esta Arma");
         }
     }
 

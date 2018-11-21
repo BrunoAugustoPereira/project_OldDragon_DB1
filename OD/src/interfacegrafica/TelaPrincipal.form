@@ -31,48 +31,16 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Component id="rotuloAcoes" min="-2" max="-2" attributes="0"/>
                   <Group type="102" alignment="0" attributes="0">
-                      <Group type="103" groupAlignment="1" attributes="0">
-                          <Component id="botaoInserirClasse" min="-2" pref="170" max="-2" attributes="0"/>
-                          <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                              <Group type="102" attributes="0">
-                                  <Component id="botaoConsultarJogadores" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <EmptySpace max="-2" attributes="0"/>
-                                  <Component id="botaoInserirJogadores" min="-2" pref="170" max="-2" attributes="0"/>
-                              </Group>
-                              <Group type="102" alignment="1" attributes="0">
-                                  <Component id="botaoConsultarMestres" min="-2" pref="170" max="-2" attributes="0"/>
-                                  <EmptySpace max="32767" attributes="0"/>
-                                  <Component id="botaoInserirMestre" min="-2" pref="170" max="-2" attributes="0"/>
-                              </Group>
-                          </Group>
-                          <Component id="botaoInserirIdioma" alignment="1" min="-2" pref="170" max="-2" attributes="0"/>
-                      </Group>
+                      <Component id="botaoCRUDJogador" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botaoCRUDMestre" min="-2" pref="170" max="-2" attributes="0"/>
                       <EmptySpace type="unrelated" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Group type="102" attributes="0">
-                              <Component id="botaoInserirArma" min="-2" pref="170" max="-2" attributes="0"/>
-                              <EmptySpace pref="9" max="32767" attributes="0"/>
-                              <Component id="botaoInserirPersonagem" min="-2" pref="170" max="-2" attributes="0"/>
-                          </Group>
-                          <Group type="102" attributes="0">
-                              <Group type="103" groupAlignment="0" attributes="0">
-                                  <Group type="102" attributes="0">
-                                      <Component id="botaoAtualizarMestre" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="botaoRemoverMestre" min="-2" pref="170" max="-2" attributes="0"/>
-                                  </Group>
-                                  <Group type="102" attributes="0">
-                                      <Component id="botaoAtualizarJogadores" min="-2" pref="170" max="-2" attributes="0"/>
-                                      <EmptySpace max="-2" attributes="0"/>
-                                      <Component id="botaoRemoverJogadores" min="-2" pref="170" max="-2" attributes="0"/>
-                                  </Group>
-                              </Group>
-                              <EmptySpace min="0" pref="0" max="32767" attributes="0"/>
-                          </Group>
-                      </Group>
+                      <Component id="botaoHomebrew" min="-2" pref="170" max="-2" attributes="0"/>
+                      <EmptySpace max="-2" attributes="0"/>
+                      <Component id="botaoGerenciarPersonagem" min="-2" pref="170" max="-2" attributes="0"/>
                   </Group>
               </Group>
-              <EmptySpace max="-2" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -83,27 +51,12 @@
               <Component id="rotuloAcoes" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="botaoConsultarJogadores" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoAtualizarJogadores" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoInserirJogadores" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoRemoverJogadores" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoCRUDJogador" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoHomebrew" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoCRUDMestre" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
+                  <Component id="botaoGerenciarPersonagem" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
               </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="botaoAtualizarMestre" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoInserirMestre" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoConsultarMestres" alignment="3" min="-2" pref="57" max="-2" attributes="0"/>
-                  <Component id="botaoRemoverMestre" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace max="-2" attributes="0"/>
-              <Group type="103" groupAlignment="3" attributes="0">
-                  <Component id="botaoInserirClasse" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoInserirArma" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-                  <Component id="botaoInserirPersonagem" alignment="3" min="-2" pref="60" max="-2" attributes="0"/>
-              </Group>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
-              <Component id="botaoInserirIdioma" min="-2" pref="60" max="-2" attributes="0"/>
-              <EmptySpace pref="29" max="32767" attributes="0"/>
+              <EmptySpace max="32767" attributes="0"/>
           </Group>
       </Group>
     </DimensionLayout>
@@ -114,108 +67,40 @@
         <Property name="text" type="java.lang.String" value="A&#xe7;&#xf5;es da Aplica&#xe7;&#xe3;o"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoConsultarJogadores">
+    <Component class="javax.swing.JButton" name="botaoCRUDJogador">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar Jogadores"/>
+        <Property name="text" type="java.lang.String" value="CRUD Jogador"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoConsultarJogadoresActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCRUDJogadorActionPerformed"/>
       </Events>
       <AuxValues>
         <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
         <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
       </AuxValues>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirMestre">
+    <Component class="javax.swing.JButton" name="botaoGerenciarPersonagem">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Mestre"/>
+        <Property name="text" type="java.lang.String" value="Gerenciar Personagem"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirMestreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoGerenciarPersonagemActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoAtualizarMestre">
+    <Component class="javax.swing.JButton" name="botaoHomebrew">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Atualizar Mestre"/>
+        <Property name="text" type="java.lang.String" value="Homebrew"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAtualizarMestreActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoHomebrewActionPerformed"/>
       </Events>
     </Component>
-    <Component class="javax.swing.JButton" name="botaoRemoverJogadores">
+    <Component class="javax.swing.JButton" name="botaoCRUDMestre">
       <Properties>
-        <Property name="text" type="java.lang.String" value="Remover Jogadores"/>
+        <Property name="text" type="java.lang.String" value="CRUD Mestre"/>
       </Properties>
       <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoRemoverJogadoresActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoAtualizarJogadores">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Atualizar Jogadores"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoAtualizarJogadoresActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirJogadores">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Jogadores"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirJogadoresActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoConsultarMestres">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Consultar Mestres"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoConsultarMestresActionPerformed"/>
-      </Events>
-      <AuxValues>
-        <AuxValue name="JavaCodeGenerator_VariableLocal" type="java.lang.Boolean" value="true"/>
-        <AuxValue name="JavaCodeGenerator_VariableModifier" type="java.lang.Integer" value="0"/>
-      </AuxValues>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoRemoverMestre">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Remover Mestre"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoRemoverMestreActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirClasse">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Classe"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirClasseActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirIdioma">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Idioma"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirIdiomaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirArma">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Arma"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirArmaActionPerformed"/>
-      </Events>
-    </Component>
-    <Component class="javax.swing.JButton" name="botaoInserirPersonagem">
-      <Properties>
-        <Property name="text" type="java.lang.String" value="Inserir Personagem"/>
-      </Properties>
-      <Events>
-        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoInserirPersonagemActionPerformed"/>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="botaoCRUDMestreActionPerformed"/>
       </Events>
     </Component>
   </SubComponents>

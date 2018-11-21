@@ -7,6 +7,10 @@ package interfacegrafica;
 
 import dao.Classe;
 import dao.ClasseDAO;
+import dao.Idioma;
+import dao.IdiomaDAO;
+import dao.IdiomaPersonagem;
+import dao.IdiomaPersonagemDAO;
 import dao.Jogador;
 import dao.JogadorDAO;
 import dao.Mestre;
@@ -16,6 +20,7 @@ import dao.PersonagemDAO;
 import dao.Raca;
 import dao.RacaDAO;
 import java.util.List;
+import java.util.Random;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 import javax.swing.JOptionPane;
@@ -36,6 +41,7 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
         ChangeOptionsMestre();
         ChangeOptionsRaca();
         ChangeOptionsClasse();
+        ChangeOptionsIdiomasAdicionais();
     }
 
     /**
@@ -79,6 +85,10 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
         jComboBoxClasse = new javax.swing.JComboBox<>();
         rotuloNomeDadoClasse19 = new javax.swing.JLabel();
         textoTamanho = new javax.swing.JTextField();
+        jComboBoxIdiomaAdicional1 = new javax.swing.JComboBox<>();
+        rotuloNomeDadoClasse20 = new javax.swing.JLabel();
+        rotuloNomeDadoClasse21 = new javax.swing.JLabel();
+        jComboBoxIdiomaAdicional2 = new javax.swing.JComboBox<>();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Inserir Personagem");
@@ -188,6 +198,10 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
             }
         });
 
+        rotuloNomeDadoClasse20.setText("Idioma Adicional 1: ");
+
+        rotuloNomeDadoClasse21.setText("Idioma Adicional 2: ");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -195,6 +209,20 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
             .addGroup(layout.createSequentialGroup()
                 .addGap(26, 26, 26)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rotuloNomeDadoClasse20)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                                .addComponent(jComboBoxIdiomaAdicional1, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(rotuloNomeDadoClasse16, javax.swing.GroupLayout.PREFERRED_SIZE, 39, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addComponent(jComboBoxMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addGap(18, 18, 18)
+                        .addComponent(rotuloNomeDadoClasse21)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(jComboBoxIdiomaAdicional2, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addComponent(botaoInserir)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(rotuloNome)
@@ -217,19 +245,11 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(textoTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                            .addGroup(layout.createSequentialGroup()
-                                .addComponent(rotuloNomeDadoClasse16)
-                                .addGap(18, 18, 18)
-                                .addComponent(jComboBoxMestre, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rotuloNomeDadoClasse18))
-                            .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                            .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addComponent(rotuloNomeDadoClasse9)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                                .addComponent(jComboBoxJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                                .addComponent(rotuloNomeDadoClasse17))
+                                .addComponent(jComboBoxJogador, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))
                             .addGroup(javax.swing.GroupLayout.Alignment.LEADING, layout.createSequentialGroup()
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                                     .addGroup(layout.createSequentialGroup()
@@ -244,9 +264,9 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                     .addComponent(rotuloNomeDadoClasse11)
                                     .addComponent(rotuloNomeDadoClasse12, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE))))
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(layout.createSequentialGroup()
+                                .addGap(32, 32, 32)
                                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                     .addGroup(layout.createSequentialGroup()
                                         .addComponent(textoSabedoria, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -262,26 +282,34 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
                                         .addComponent(textoCarisma, javax.swing.GroupLayout.PREFERRED_SIZE, 53, javax.swing.GroupLayout.PREFERRED_SIZE)))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(botaoRolarStatus))
-                            .addComponent(jComboBoxRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
-                            .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))
+                            .addGroup(layout.createSequentialGroup()
+                                .addGap(23, 23, 23)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                                    .addComponent(rotuloNomeDadoClasse18, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                    .addComponent(rotuloNomeDadoClasse17, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                                    .addComponent(jComboBoxClasse, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(jComboBoxRaca, javax.swing.GroupLayout.PREFERRED_SIZE, 157, javax.swing.GroupLayout.PREFERRED_SIZE))))))
                 .addContainerGap(15, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(rotuloNome)
-                    .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rotuloNomeDadoClasse6)
-                    .addComponent(jComboBoxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rotuloNomeDadoClasse7)
-                    .addComponent(jComboBoxAlinhamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(rotuloNomeDadoClasse8)
-                    .addComponent(textoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(rotuloNomeDadoClasse19)
-                        .addComponent(textoTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(textoTamanho, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(rotuloNome)
+                        .addComponent(textoNome, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rotuloNomeDadoClasse6)
+                        .addComponent(jComboBoxNivel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rotuloNomeDadoClasse7)
+                        .addComponent(jComboBoxAlinhamento, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(rotuloNomeDadoClasse8)
+                        .addComponent(textoIdade, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
@@ -315,7 +343,13 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
                     .addGroup(layout.createSequentialGroup()
                         .addGap(22, 22, 22)
                         .addComponent(botaoRolarStatus)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 64, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(jComboBoxIdiomaAdicional1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(rotuloNomeDadoClasse20)
+                    .addComponent(rotuloNomeDadoClasse21)
+                    .addComponent(jComboBoxIdiomaAdicional2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 33, Short.MAX_VALUE)
                 .addComponent(botaoInserir)
                 .addContainerGap())
         );
@@ -339,21 +373,46 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
                 p.setSabedoria(Integer.parseInt(textoSabedoria.getText()));
                 p.setCarisma(Integer.parseInt(textoCarisma.getText()));
                 p.setInteligencia(Integer.parseInt(textoInteligencia.getText()));
+
                 RacaDAO rDAO = new RacaDAO();
                 Raca r = rDAO.obterPorNome(jComboBoxRaca.getSelectedItem().toString()).get(0);
                 p.setRaca(r.getId());
+
                 ClasseDAO cDAO = new ClasseDAO();
                 Classe c = cDAO.obterPorNome(jComboBoxClasse.getSelectedItem().toString()).get(0);
                 p.setClasse(c.getId());
+
                 MestreDAO mDAO = new MestreDAO();
                 Mestre m = mDAO.obterPorNome(jComboBoxMestre.getSelectedItem().toString()).get(0);
                 p.setMestre(m.getId());
+
                 JogadorDAO jDAO = new JogadorDAO();
                 Jogador j = jDAO.obterPorNome(jComboBoxJogador.getSelectedItem().toString()).get(0);
                 p.setJogador(j.getId());
                 PersonagemDAO dao = new PersonagemDAO();
                 dao.inserir(p);
+                int id_pers=dao.obterPorNome(p.getNome()).get(0).getId();
+                IdiomaDAO d=new IdiomaDAO();
+                int id_id1 = d.obterPorNome(jComboBoxIdiomaAdicional1.getSelectedItem().toString()).get(0).getId();
+                int id_id2 = d.obterPorNome(jComboBoxIdiomaAdicional2.getSelectedItem().toString()).get(0).getId();
+                IdiomaPersonagem ip1 = new IdiomaPersonagem();
+                ip1.setIdIdioma(id_id1);
+                ip1.setIdPersonagem(id_pers);
+                IdiomaPersonagem ip2 = new IdiomaPersonagem();
+                ip2.setIdIdioma(id_id2);
+                ip2.setIdPersonagem(id_pers);
+                IdiomaPersonagemDAO ipDAO = new IdiomaPersonagemDAO();
+                ipDAO.inserir(ip1);
+                ipDAO.inserir(ip2);
                 textoNome.setText("");
+                textoIdade.setText("");
+                textoTamanho.setText("");
+                textoForca.setText("");
+                textoDestreza.setText("");
+                textoConstituicao.setText("");
+                textoSabedoria.setText("");
+                textoCarisma.setText("");
+                textoInteligencia.setText("");
                 JOptionPane.showMessageDialog(this, "Personagem inserido com sucesso", "Inserir Personagem", JOptionPane.INFORMATION_MESSAGE);
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(this, ex.getMessage(), "Inserir Personagem", JOptionPane.ERROR_MESSAGE);
@@ -419,6 +478,23 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
             Logger.getLogger(TelaAtualizarJogador.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
+    private void ChangeOptionsIdiomasAdicionais(){
+        try {
+            jComboBoxIdiomaAdicional1.removeAllItems();
+            jComboBoxIdiomaAdicional2.removeAllItems();
+            IdiomaDAO jDAO = new IdiomaDAO();
+            List<Idioma> Idiomas = jDAO.obterTodos();
+            
+            for(int i = 0;Idiomas.size()>i;i++){
+                jComboBoxIdiomaAdicional1.addItem(Idiomas.get(i).getNome());
+                jComboBoxIdiomaAdicional2.addItem(Idiomas.get(i).getNome());
+            }
+
+            
+        } catch (Exception ex) {
+            Logger.getLogger(TelaAtualizarJogador.class.getName()).log(Level.SEVERE, null, ex);
+        }
+    }
     
     
     
@@ -451,7 +527,19 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
     }//GEN-LAST:event_textoInteligenciaActionPerformed
 
     private void botaoRolarStatusActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoRolarStatusActionPerformed
-     // generate 6 random numbers beetween 3 and 18 and fill the status text fields
+     Random random = new Random();
+     int x = random.nextInt(15)+3;
+     textoForca.setText(Integer.toString(x));
+     x = random.nextInt(15)+3;
+     textoDestreza.setText(Integer.toString(x));
+     x = random.nextInt(15)+3;
+     textoConstituicao.setText(Integer.toString(x));
+     x = random.nextInt(15)+3;
+     textoSabedoria.setText(Integer.toString(x));
+     x = random.nextInt(15)+3;
+     textoCarisma.setText(Integer.toString(x));
+     x = random.nextInt(15)+3;
+     textoInteligencia.setText(Integer.toString(x));
     }//GEN-LAST:event_botaoRolarStatusActionPerformed
 
     private void textoTamanhoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoTamanhoActionPerformed
@@ -463,6 +551,8 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
     private javax.swing.JButton botaoRolarStatus;
     private javax.swing.JComboBox<String> jComboBoxAlinhamento;
     public javax.swing.JComboBox<String> jComboBoxClasse;
+    public javax.swing.JComboBox<String> jComboBoxIdiomaAdicional1;
+    public javax.swing.JComboBox<String> jComboBoxIdiomaAdicional2;
     public javax.swing.JComboBox<String> jComboBoxJogador;
     public javax.swing.JComboBox<String> jComboBoxMestre;
     private javax.swing.JComboBox<String> jComboBoxNivel;
@@ -478,6 +568,8 @@ public class TelaInserirPersonagem extends javax.swing.JDialog {
     private javax.swing.JLabel rotuloNomeDadoClasse17;
     private javax.swing.JLabel rotuloNomeDadoClasse18;
     private javax.swing.JLabel rotuloNomeDadoClasse19;
+    private javax.swing.JLabel rotuloNomeDadoClasse20;
+    private javax.swing.JLabel rotuloNomeDadoClasse21;
     private javax.swing.JLabel rotuloNomeDadoClasse6;
     private javax.swing.JLabel rotuloNomeDadoClasse7;
     private javax.swing.JLabel rotuloNomeDadoClasse8;

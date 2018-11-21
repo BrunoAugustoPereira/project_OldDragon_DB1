@@ -80,7 +80,7 @@ public class RacaDAO extends DAO {
         
         List<Raca> Racas = new ArrayList<Raca>();
         Connection c = obterConexao();
-        String sql = "SELECT raca.id ,raca.nome, tamanho_usual, idade_maturidade, expectativa_de_vida, movimentacao_base, idioma.nome FROM raca, idioma WHERE raca.id_idioma=idioma.id and upper(nome) LIKE ? ";
+        String sql = "SELECT raca.id ,raca.nome, tamanho_usual, idade_maturidade, expectativa_de_vida, movimentacao_base, idioma.nome FROM raca, idioma WHERE raca.id_idioma=idioma.id and upper(raca.nome) LIKE ? ";
         PreparedStatement stmt = c.prepareStatement(sql);
         stmt.setString(1, nome);
         ResultSet rs = stmt.executeQuery();

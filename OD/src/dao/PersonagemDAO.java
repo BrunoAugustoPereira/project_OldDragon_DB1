@@ -8,7 +8,10 @@ package dao;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -38,10 +41,34 @@ public class PersonagemDAO extends DAO {
         stmt.close();
         fecharConexao(c);
         if (resultado != 1) {
-            throw new Exception("Não foi possível inserir esta pessoa");
+            throw new Exception("Não foi possível inserir este personagem");
         }
             
            
+    }
+     public List<Personagem> obterPorNome(String nome) throws Exception {
+        if (nome == null || nome.trim().length() == 0) {
+            nome = "%";
+        } else {
+            nome = "%" + nome.toUpperCase() + "%";
+        }
+        
+        List<Personagem> Personagens = new ArrayList<Personagem>();
+        Connection c = obterConexao();
+        String sql = "SELECT id, nome FROM personagem WHERE upper(nome) LIKE ? ";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        stmt.setString(1, nome);
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Personagem p = new Personagem();
+            p.setId(rs.getInt("id"));
+            p.setNome(rs.getString("nome"));
+            Personagens.add(p);
+        }
+        rs.close();
+        stmt.close();
+        fecharConexao(c);
+        return Personagens;
     }
     
        
