@@ -70,6 +70,27 @@ public class PersonagemDAO extends DAO {
         fecharConexao(c);
         return Personagens;
     }
+     
+      public List<Personagem> obterPorJogador(Jogador j) throws Exception {
+     
+        List<Personagem> Personagens = new ArrayList<Personagem>();
+        Connection c = obterConexao();
+        String sql = "select personagem.id ,personagem.nome ,nivel from personagem where personagem.jogador=?";
+        PreparedStatement stmt = c.prepareStatement(sql);
+        stmt.setInt(1, j.getId());
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            Personagem p = new Personagem();
+            p.setId(rs.getInt("id"));
+            p.setNome(rs.getString("nome"));
+            p.setNive(rs.getInt("nivel"));
+            Personagens.add(p);
+        }
+        rs.close();
+        stmt.close();
+        fecharConexao(c);
+        return Personagens;
+    }
     
        
     

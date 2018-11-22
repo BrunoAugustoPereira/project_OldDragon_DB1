@@ -31,6 +31,7 @@ public class TelaPersonagem extends javax.swing.JFrame{
 
         rotuloAcoes = new javax.swing.JLabel();
         botaoInserirPersonagem = new javax.swing.JButton();
+        botaoArmarPersonagem = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
         setTitle("Gerenciador Old Dragon");
@@ -46,6 +47,13 @@ public class TelaPersonagem extends javax.swing.JFrame{
             }
         });
 
+        botaoArmarPersonagem.setText("Armar personagem");
+        botaoArmarPersonagem.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                botaoArmarPersonagemActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
         layout.setHorizontalGroup(
@@ -54,8 +62,11 @@ public class TelaPersonagem extends javax.swing.JFrame{
                 .addContainerGap()
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rotuloAcoes)
-                    .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(481, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(botaoArmarPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 170, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(293, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -63,7 +74,9 @@ public class TelaPersonagem extends javax.swing.JFrame{
                 .addContainerGap()
                 .addComponent(rotuloAcoes)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(botaoInserirPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(botaoArmarPersonagem, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(23, Short.MAX_VALUE))
         );
 
@@ -83,8 +96,21 @@ public class TelaPersonagem extends javax.swing.JFrame{
     
     }//GEN-LAST:event_botaoInserirPersonagemActionPerformed
 
+    private void botaoArmarPersonagemActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_botaoArmarPersonagemActionPerformed
+        TelaInserirArmaPersonagem dialog = new TelaInserirArmaPersonagem(this, true);
+        dialog.setLocationRelativeTo(null);
+        dialog.addWindowListener(new java.awt.event.WindowAdapter() {
+            @Override
+            public void windowClosing(java.awt.event.WindowEvent e) {
+                dialog.dispose();
+            }
+        });
+        dialog.setVisible(true);
+    }//GEN-LAST:event_botaoArmarPersonagemActionPerformed
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton botaoArmarPersonagem;
     private javax.swing.JButton botaoInserirPersonagem;
     private javax.swing.JLabel rotuloAcoes;
     // End of variables declaration//GEN-END:variables

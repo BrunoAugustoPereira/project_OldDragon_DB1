@@ -47,6 +47,12 @@ public class TelaConsultarMestre extends javax.swing.JDialog {
 
         rotuloNome.setText("Nome:");
 
+        textoNome.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                textoNomeActionPerformed(evt);
+            }
+        });
+
         botaoConsultar.setText("Consultar");
         botaoConsultar.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
@@ -106,6 +112,10 @@ public class TelaConsultarMestre extends javax.swing.JDialog {
             JOptionPane.showMessageDialog(this, ex.getMessage(), "Consultar Mestre", JOptionPane.ERROR_MESSAGE);
         }
     }//GEN-LAST:event_botaoConsultarActionPerformed
+
+    private void textoNomeActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_textoNomeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_textoNomeActionPerformed
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton botaoConsultar;
